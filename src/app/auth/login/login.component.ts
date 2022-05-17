@@ -1,4 +1,4 @@
-import { login } from './../auth.actions';
+import { login, logout } from './../auth.actions';
 import { AppState } from './../reducers/index';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -54,5 +54,9 @@ export class LoginComponent implements OnInit {
         })
       )
       .subscribe(noop, () => console.log('Login failed!'));
+  }
+
+  logout() {
+    // this.auth.l
   }
 }

@@ -1,5 +1,5 @@
 import { login, logout } from './../auth.actions';
-import { AppState } from './../reducers/index';
+import { AuthState } from './../reducers/index';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private auth: AuthService,
     private router: Router,
-    private store: Store<AppState>
+    private store: Store<AuthState>
   ) {
     this.form = fb.group({
       email: ['test@angular-university.io', [Validators.required]],
@@ -42,12 +42,6 @@ export class LoginComponent implements OnInit {
           console.log('user', user);
 
           let action = login({ user });
-          // let action = {
-          //   type: 'Login Action',
-          //   payload: {
-          //     userProfile: user,
-          //   },
-          // };
           this.store.dispatch(action);
 
           this.router.navigateByUrl('/courses');

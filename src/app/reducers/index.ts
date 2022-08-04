@@ -8,6 +8,7 @@ import {
   MetaReducer,
   on,
 } from '@ngrx/store';
+import { AuthActions } from '../auth/action-types';
 // import { AuthActions } from '../action-types';
 
 export interface AppState {
@@ -24,6 +25,12 @@ export const initialAuthState: AppState = {
 //   on(AuthActions.login, (state, action) => {
 //     return {
 //       user: action.user
+//     }
+//   }),
+
+//   on(AuthActions.logout, (state, action) => {
+//     return {
+//       user: undefined
 //     }
 //   })
 // )

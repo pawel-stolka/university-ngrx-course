@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { authReducer } from './reducers/index';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -28,7 +29,10 @@ export class AuthModule {
   static forRoot(): ModuleWithProviders<AuthModule> {
     return {
       ngModule: AuthModule,
-      providers: [AuthService],
+      providers: [
+        AuthService,
+        AuthGuard
+      ],
     };
   }
 }
